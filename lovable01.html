@@ -1,13 +1,831 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="鍾皓軒｜AI、資料科學與行銷策略顧問"><title>鍾皓軒｜AI × 資料策略顧問</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Noto+Sans+TC:wght@400;500;700;800&display=swap" rel="stylesheet"><style>
-:root{--ink:#152035;--muted:#657084;--paper:#fbfaf4;--sand:#f1f0e8;--green:#19755e;--deep:#153d38;--orange:#c96327;--line:#d9ddd6}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 "Noto Sans TC",sans-serif}a{color:inherit;text-decoration:none}.shell{width:min(1180px,calc(100% - 48px));margin:auto}.header{height:82px;position:sticky;top:0;z-index:10;display:flex;align-items:center;background:#fbfaf4ee;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav{display:flex;align-items:center;justify-content:space-between;width:100%}.logo{font:800 17px/1 Manrope,sans-serif;letter-spacing:-.08em}.logo small{display:block;font:700 9px Manrope,sans-serif;letter-spacing:.15em;color:var(--green);margin-top:6px}.links{display:flex;gap:24px;color:var(--muted);font-size:14px}.links a:hover{color:var(--green)}.button{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:999px;background:var(--orange);color:#fff;font-weight:700;font-size:14px;transition:.2s}.button:hover{transform:translateY(-2px);background:#ab4f1d}.menu{display:none;background:none;border:0;font-size:25px}.hero{padding:clamp(85px,12vw,160px) 0 80px;overflow:hidden;position:relative}.hero:after{content:"";position:absolute;z-index:-1;right:-150px;top:30px;width:640px;height:640px;background:radial-gradient(circle at 40% 40%,#8bc6a488,transparent 42%),radial-gradient(circle at 65% 65%,#e5a26388,transparent 50%);border-radius:50%}.hero-grid,.about-grid,.contact-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:55px;align-items:end}.eyebrow{font:700 12px/1 Manrope,sans-serif;letter-spacing:.14em;color:var(--green);margin:0 0 18px}.hero h1,.heading{font-size:clamp(42px,6.7vw,94px);letter-spacing:-.075em;line-height:1.06;margin:0}.hero h1 em{font-style:normal;color:var(--green)}.lead{max-width:650px;color:var(--muted);font-size:18px;margin:28px 0}.actions{display:flex;align-items:center;gap:20px}.textlink{color:var(--green);font-weight:700;font-size:14px}.stamp{border-left:1px solid var(--line);padding:20px 0 0 32px}.stamp strong{font:800 80px/.9 Manrope,sans-serif;letter-spacing:-.1em}.stamp p{font-size:13px;color:var(--muted)}.trust{border-block:1px solid var(--line);padding:23px 0}.trust .shell{display:flex;gap:35px;align-items:center;justify-content:space-between}.trust p{color:var(--muted);font-size:13px;margin:0}.industry{display:flex;gap:20px;flex-wrap:wrap;font:700 13px Manrope,sans-serif}section{padding:clamp(80px,11vw,145px) 0}.dark{background:var(--ink);color:#f9f8f2}.dark .eyebrow{color:#95d5b4}.about-grid{align-items:start}.dark .heading{font-size:clamp(38px,5vw,66px)}.dark .copy{color:#c3cbd4;font-size:17px}.facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #405064;margin-top:45px}.fact{padding-top:18px}.fact b{display:block;font:800 34px/1 Manrope,sans-serif;color:#9bdab9}.fact span{font-size:12px;color:#b9c3ce}.top{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:55px}.top .heading{font-size:clamp(35px,4.8vw,65px)}.top p:last-child{color:var(--muted);font-size:17px;margin:0;align-self:end}.tree,.solution-list,.blog{border-top:1px solid var(--line)}.tree-item,.solution{display:grid;grid-template-columns:95px 1fr 1.15fr;gap:24px;padding:28px 0;border-bottom:1px solid var(--line)}.number{font:700 12px Manrope,sans-serif;color:var(--green)}h3{margin:0;font-size:22px;letter-spacing:-.045em;line-height:1.3}.tree p,.solution p{margin:0;color:var(--muted);font-size:14px}.sand{background:var(--sand)}.solution{grid-template-columns:115px 1fr 1fr}.solution:hover{padding-left:13px}.solution .number{color:var(--orange)}.journey{display:grid;grid-template-columns:repeat(4,1fr);border-block:1px solid var(--line)}.step{padding:28px 24px 30px 0}.step+ .step{border-left:1px solid var(--line);padding-left:24px}.step span{font:700 12px Manrope;color:var(--orange)}.step h3{margin:42px 0 9px;font-size:20px}.step p{color:var(--muted);font-size:13px;margin:0}.cases{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}.case{min-height:295px;border-radius:22px;padding:30px;color:#fbfaf4;background:var(--ink);display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}.case:after{content:"";width:230px;height:230px;border:1px solid currentColor;opacity:.25;border-radius:50%;position:absolute;right:-75px;bottom:-85px}.case:nth-child(2){background:var(--deep)}.case:nth-child(3){background:#d89a61;color:var(--ink)}.case:nth-child(4){background:#e8e7dd;color:var(--ink)}.case:first-child{grid-row:span 2}.case span{font:700 11px Manrope;letter-spacing:.12em}.case h3{font-size:clamp(25px,2.5vw,39px);position:relative;z-index:1}.case p{font-size:14px;max-width:35ch;opacity:.8;position:relative;z-index:1}.blog{display:grid;grid-template-columns:repeat(3,1fr)}.article{padding:25px 24px 32px 0;border-bottom:1px solid var(--line)}.article+ .article{border-left:1px solid var(--line);padding-left:24px}.article time{font:700 11px Manrope;color:var(--green)}.article h3{margin:62px 0 12px}.article p{font-size:14px;color:var(--muted);margin:0}.contact{background:var(--deep);color:#fbfaf4}.contact .heading{font-size:clamp(42px,6.3vw,82px)}.contact p{color:#c5d7d0;max-width:500px}.contact .button{background:#fbfaf4;color:var(--deep)}.contact-note{border-left:1px solid #5f9384;padding-left:28px;color:#b9d4cb;font-size:14px}.footer{padding:36px 0}.footer .shell{display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:12px}.footer nav{display:flex;gap:15px}@media(max-width:760px){.shell{width:calc(100% - 36px)}.links,.nav .button{display:none}.menu{display:block}.hero-grid,.about-grid,.contact-grid,.top,.cases{grid-template-columns:1fr}.stamp{border-left:0;border-top:1px solid var(--line);padding:26px 0 0}.trust .shell{align-items:flex-start;flex-direction:column}.tree-item,.solution{grid-template-columns:58px 1fr}.tree-item p,.solution p{grid-column:2}.journey,.blog{grid-template-columns:1fr}.step,.step+ .step,.article,.article+ .article{border-left:0;border-bottom:1px solid var(--line);padding:25px 0}.case:first-child{grid-row:auto;min-height:370px}.footer .shell{flex-direction:column}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
-</style></head><body><header class="header"><div class="shell nav"><a href="#top" class="logo">HSIEN CHUNG<small>TMR · TAIWAN MARKETING RESEARCH</small></a><nav class="links"><a href="#about">關於我</a><a href="#solutions">AI 解決方案</a><a href="#cases">案例展示</a><a href="#insights">技術部落格</a></nav><a class="button" href="#contact">預約策略諮詢</a><button class="menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button></div></header><main id="top">
-<section class="hero"><div class="shell hero-grid"><div><p class="eyebrow">AI STRATEGY · DATA SCIENCE · MARKETING</p><h1>讓 <em>AI</em> 與資料，成為企業成長的日常能力。</h1><p class="lead">我是鍾皓軒，TMR 臺灣行銷研究有限公司創辦人。我協助企業與專業團隊，把有用的資料、可行的 AI 工具，轉化為可執行的營運、行銷與決策方案。</p><div class="actions"><a class="button" href="#contact">開始一場策略對話</a><a class="textlink" href="#solutions">探索服務內容 ↓</a></div></div><aside class="stamp"><strong>08+</strong><p>年資料科學與產業教學經驗<br>從技術理解，到商業落地</p></aside></div></section>
-<div class="trust"><div class="shell"><p>跨領域服務經驗</p><div class="industry"><span>金融</span><span>製造</span><span>醫療</span><span>化工</span><span>教育</span><span>網路廣告</span><span>出版</span></div></div></div>
-<section id="about" class="dark"><div class="shell about-grid"><div><p class="eyebrow">01 · WHO I AM</p><h2 class="heading">技術要被理解，<br>更要被真正用起來。</h2><div class="facts"><div class="fact"><b>8+</b><span>資料科學與教學經驗</span></div><div class="fact"><b>50+</b><span>企業與課程合作</span></div><div class="fact"><b>0→1</b><span>從導入到組織賦能</span></div></div></div><div class="copy"><p>我專注於 AI、資料科學與行銷策略應用，是企業顧問，也是課程講師。長期協助企業、學術單位與專業人士理解數據、導入 AI，並將分析結果轉化為可執行的成長方案。</p><p>曾於中華電信、長榮航空、資策會、工研院、證基會與多家金融企業擔任資料科學講師，也於台科大、北市大等學術場域教授行銷資料科學、AI 與市場分析。</p></div></div></section>
-<section><div class="shell"><div class="top"><div><p class="eyebrow">02 · THE CHALLENGE</p><h2 class="heading">從「有工具」，走到「有效益」。</h2></div><p>資料分散、流程繁雜、決策仰賴經驗，或團隊不知道如何讓 AI 進入日常工作，都是導入停滯的原因。我協助客戶以明確方法，跨過這段落差。</p></div><div class="tree"><article class="tree-item"><span class="number">A / 資料</span><h3>有資料，卻無法支持決策</h3><p>建立資料分析架構與預測模型，讓市場、客戶與營運訊號被看見。</p></article><article class="tree-item"><span class="number">B / 工具</span><h3>有 AI，卻不知道如何落地</h3><p>找到最適合的應用場景，將 Chatbot、知識庫與自動化導入既有流程。</p></article><article class="tree-item"><span class="number">C / 團隊</span><h3>有需求，卻缺少實戰能力</h3><p>以企業聽得懂、團隊學得會的訓練與陪跑，建立可持續的能力。</p></article></div></div></section>
-<section id="solutions" class="sand"><div class="shell"><div class="top"><div><p class="eyebrow">03 · AI SOLUTIONS</p><h2 class="heading">讓技術成為流程的一部分。</h2></div><p>從策略規劃、技術建置到組織賦能，依企業現況組合最需要的解決方案，不做只好看的展示。</p></div><div class="solution-list"><article class="solution"><span class="number">01 / AI 導入</span><h3>企業 AI 教育訓練</h3><p>建立 AI 工具使用能力與實戰思維，讓團隊能判斷、運用並持續改善工作方法。</p></article><article class="solution"><span class="number">02 / 對話介面</span><h3>客製化 Chatbot</h3><p>應用於客服、銷售、內部知識查詢與流程引導，依據真實情境設計對話與資料串接。</p></article><article class="solution"><span class="number">03 / 自動化</span><h3>工作流程自動化 RPA</h3><p>整合重複性行政、報表與資料處理任務，讓人力回到更高價值的判斷與創造。</p></article><article class="solution"><span class="number">04 / 數據</span><h3>分析架構與預測模型</h3><p>將分散資訊整理為可追蹤的指標與模型，讓決策具備前瞻性與可驗證的依據。</p></article><article class="solution"><span class="number">05 / 策略</span><h3>私有知識庫與 AI 團隊建置</h3><p>把內部文件、經驗與流程轉化為智慧資產，同時規劃人才分工、導入流程與應用場景。</p></article><article class="solution"><span class="number">06 / 成長</span><h3>行銷自動化漏斗</h3><p>串接內容、名單、銷售與數據追蹤，讓 AI 成為商業成長的持續推進器。</p></article></div></div></section>
-<section><div class="shell"><div class="top"><div><p class="eyebrow">04 · HOW WE WORK</p><h2 class="heading">導入不是一次專案，<br>而是一條可走的路徑。</h2></div></div><div class="journey"><article class="step"><span>01</span><h3>盤點現況</h3><p>釐清資料、流程、痛點與優先場景。</p></article><article class="step"><span>02</span><h3>設計方法</h3><p>選擇能最快創造價值的工具與方案。</p></article><article class="step"><span>03</span><h3>共同實作</h3><p>透過專案、原型與培訓，讓團隊參與其中。</p></article><article class="step"><span>04</span><h3>持續優化</h3><p>用衡量指標回看效益，將能力留在組織內。</p></article></div></div></section>
-<section id="cases"><div class="shell"><div class="top"><div><p class="eyebrow">05 · SELECTED WORK</p><h2 class="heading">案例不只展示成果，<br>更展示可複製的方法。</h2></div><p>以下為可延伸的合作方向。實際專案將依組織資料成熟度、流程與目標，規劃專屬路徑。</p></div><div class="cases"><article class="case"><span>企業培訓</span><div><h3>從「會用工具」到「能解決問題」的 AI 實戰課程</h3><p>以企業真實資料與工作情境設計，建立團隊共通語言與可立即應用的工作方法。</p></div></article><article class="case"><span>智慧客服</span><div><h3>內部知識庫 × Chatbot</h3><p>把分散文件化為可被安全查找與運用的組織資產。</p></div></article><article class="case"><span>數據決策</span><div><h3>行銷與客戶洞察模型</h3><p>連結資料、分眾與行動，提高資源投入品質。</p></div></article><article class="case"><span>流程升級</span><div><h3>行政與報表自動化</h3><p>釋放重複工時，讓決策更快速一致。</p></div></article></div></div></section>
-<section id="insights" class="sand"><div class="shell"><div class="top"><div><p class="eyebrow">06 · INSIGHTS</p><h2 class="heading">把複雜的技術，說成能做的事。</h2></div><p>技術部落格將分享企業 AI 導入、資料分析與行銷策略的實務觀點。</p></div><div class="blog"><article class="article"><time>AI STRATEGY</time><h3>企業導入 AI 前，應先釐清的三個問題</h3><p>不是先找工具，而是先理解流程裡真正需要被改善的決策與工作。</p></article><article class="article"><time>DATA PRACTICE</time><h3>如何讓資料分析不止是一份漂亮報表</h3><p>從指標、假設到行動，建立能驅動商業決策的分析架構。</p></article><article class="article"><time>MARKETING SYSTEM</time><h3>AI 如何重塑內容到轉換的行銷漏斗</h3><p>在自動化之外，重新思考人、內容與資料如何協作。</p></article></div></div></section>
-<section id="contact" class="contact"><div class="shell contact-grid"><div><p class="eyebrow">07 · START A CONVERSATION</p><h2 class="heading">讓下一個 AI 專案，從一個清楚的問題開始。</h2><p>無論你正準備導入 AI、提升資料決策能力，或規劃團隊訓練，我們可以先從一次策略對話，找到最值得先做的事。</p><a class="button" href="mailto:hello@tmr.com.tw?subject=AI%20策略諮詢">預約策略諮詢</a></div><aside class="contact-note">TMR 臺灣行銷研究有限公司<br>鍾皓軒｜創辦人<br><br>請透過 Email 與我聯繫，說明你的產業、目前挑戰與期待目標。</aside></div></section>
-</main><footer class="footer"><div class="shell"><span>© 2026 Hsien Chung / TMR Taiwan Marketing Research</span><nav><a href="#about">關於我</a><a href="#solutions">服務</a><a href="#contact">聯絡我</a></nav></div></footer></body></html>
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="鍾皓軒｜AI、資料科學與行銷策略顧問" />
+    <title>鍾皓軒｜AI × 資料策略顧問</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Noto+Sans+TC:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #152035;
+        --muted: #657084;
+        --paper: #fbfaf4;
+        --sand: #f1f0e8;
+        --green: #19755e;
+        --deep: #153d38;
+        --orange: #c96327;
+        --line: #d9ddd6;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font:
+          16px/1.75 "Noto Sans TC",
+          sans-serif;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .shell {
+        width: min(1180px, calc(100% - 48px));
+        margin: auto;
+      }
+      .header {
+        height: 82px;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        background: #fbfaf4ee;
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+      }
+      .logo {
+        font:
+          800 17px/1 Manrope,
+          sans-serif;
+        letter-spacing: -0.08em;
+      }
+      .logo small {
+        display: block;
+        font:
+          700 9px Manrope,
+          sans-serif;
+        letter-spacing: 0.15em;
+        color: var(--green);
+        margin-top: 6px;
+      }
+      .links {
+        display: flex;
+        gap: 24px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .links a:hover {
+        color: var(--green);
+      }
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 20px;
+        border-radius: 999px;
+        background: var(--orange);
+        color: #fff;
+        font-weight: 700;
+        font-size: 14px;
+        transition: 0.2s;
+      }
+      .button:hover {
+        transform: translateY(-2px);
+        background: #ab4f1d;
+      }
+      .menu {
+        display: none;
+        background: none;
+        border: 0;
+        font-size: 25px;
+      }
+      .hero {
+        padding: clamp(85px, 12vw, 160px) 0 80px;
+        overflow: hidden;
+        position: relative;
+      }
+      .hero:after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        right: -150px;
+        top: 30px;
+        width: 640px;
+        height: 640px;
+        background:
+          radial-gradient(circle at 40% 40%, #8bc6a488, transparent 42%),
+          radial-gradient(circle at 65% 65%, #e5a26388, transparent 50%);
+        border-radius: 50%;
+      }
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 55px;
+        align-items: end;
+      }
+      .eyebrow {
+        font:
+          700 12px/1 Manrope,
+          sans-serif;
+        letter-spacing: 0.14em;
+        color: var(--green);
+        margin: 0 0 18px;
+      }
+      .hero h1,
+      .heading {
+        font-size: clamp(42px, 6.7vw, 94px);
+        letter-spacing: -0.075em;
+        line-height: 1.06;
+        margin: 0;
+      }
+      .hero h1 em {
+        font-style: normal;
+        color: var(--green);
+      }
+      .lead {
+        max-width: 650px;
+        color: var(--muted);
+        font-size: 18px;
+        margin: 28px 0;
+      }
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .textlink {
+        color: var(--green);
+        font-weight: 700;
+        font-size: 14px;
+      }
+      .stamp {
+        border-left: 1px solid var(--line);
+        padding: 20px 0 0 32px;
+      }
+      .portrait {
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        height: 180px;
+        margin: 0 0 26px;
+        object-fit: cover;
+        border-radius: 14px;
+      }
+      .stamp strong {
+        font:
+          800 80px/0.9 Manrope,
+          sans-serif;
+        letter-spacing: -0.1em;
+      }
+      .stamp p {
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .trust {
+        border-block: 1px solid var(--line);
+        padding: 23px 0;
+      }
+      .trust .shell {
+        display: flex;
+        gap: 35px;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .trust p {
+        color: var(--muted);
+        font-size: 13px;
+        margin: 0;
+      }
+      .industry {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        font:
+          700 13px Manrope,
+          sans-serif;
+      }
+      section {
+        padding: clamp(80px, 11vw, 145px) 0;
+      }
+      .dark {
+        background: var(--ink);
+        color: #f9f8f2;
+      }
+      .dark .eyebrow {
+        color: #95d5b4;
+      }
+      .about-grid {
+        align-items: start;
+      }
+      .dark .heading {
+        font-size: clamp(38px, 5vw, 66px);
+      }
+      .dark .copy {
+        color: #c3cbd4;
+        font-size: 17px;
+      }
+      .facts {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border-top: 1px solid #405064;
+        margin-top: 45px;
+      }
+      .fact {
+        padding-top: 18px;
+      }
+      .fact b {
+        display: block;
+        font:
+          800 34px/1 Manrope,
+          sans-serif;
+        color: #9bdab9;
+      }
+      .fact span {
+        font-size: 12px;
+        color: #b9c3ce;
+      }
+      .top {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 55px;
+      }
+      .top .heading {
+        font-size: clamp(35px, 4.8vw, 65px);
+      }
+      .top p:last-child {
+        color: var(--muted);
+        font-size: 17px;
+        margin: 0;
+        align-self: end;
+      }
+      .tree,
+      .solution-list,
+      .blog {
+        border-top: 1px solid var(--line);
+      }
+      .tree-item,
+      .solution {
+        display: grid;
+        grid-template-columns: 95px 1fr 1.15fr;
+        gap: 24px;
+        padding: 28px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .number {
+        font:
+          700 12px Manrope,
+          sans-serif;
+        color: var(--green);
+      }
+      h3 {
+        margin: 0;
+        font-size: 22px;
+        letter-spacing: -0.045em;
+        line-height: 1.3;
+      }
+      .tree p,
+      .solution p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .sand {
+        background: var(--sand);
+      }
+      .solution {
+        grid-template-columns: 115px 1fr 1fr;
+      }
+      .solution:hover {
+        padding-left: 13px;
+      }
+      .solution .number {
+        color: var(--orange);
+      }
+      .journey {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border-block: 1px solid var(--line);
+      }
+      .step {
+        padding: 28px 24px 30px 0;
+      }
+      .step + .step {
+        border-left: 1px solid var(--line);
+        padding-left: 24px;
+      }
+      .step span {
+        font: 700 12px Manrope;
+        color: var(--orange);
+      }
+      .step h3 {
+        margin: 42px 0 9px;
+        font-size: 20px;
+      }
+      .step p {
+        color: var(--muted);
+        font-size: 13px;
+        margin: 0;
+      }
+      .cases {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 16px;
+      }
+      .case {
+        min-height: 295px;
+        border-radius: 22px;
+        padding: 30px;
+        color: #fbfaf4;
+        background: var(--ink);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+      }
+      .case:after {
+        content: "";
+        width: 230px;
+        height: 230px;
+        border: 1px solid currentColor;
+        opacity: 0.25;
+        border-radius: 50%;
+        position: absolute;
+        right: -75px;
+        bottom: -85px;
+      }
+      .case:nth-child(2) {
+        background: var(--deep);
+      }
+      .case:nth-child(3) {
+        background: #d89a61;
+        color: var(--ink);
+      }
+      .case:nth-child(4) {
+        background: #e8e7dd;
+        color: var(--ink);
+      }
+      .case:first-child {
+        grid-row: span 2;
+      }
+      .case span {
+        font: 700 11px Manrope;
+        letter-spacing: 0.12em;
+      }
+      .case h3 {
+        font-size: clamp(25px, 2.5vw, 39px);
+        position: relative;
+        z-index: 1;
+      }
+      .case p {
+        font-size: 14px;
+        max-width: 35ch;
+        opacity: 0.8;
+        position: relative;
+        z-index: 1;
+      }
+      .blog {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .article {
+        padding: 25px 24px 32px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .article + .article {
+        border-left: 1px solid var(--line);
+        padding-left: 24px;
+      }
+      .article time {
+        font: 700 11px Manrope;
+        color: var(--green);
+      }
+      .article h3 {
+        margin: 62px 0 12px;
+      }
+      .article p {
+        font-size: 14px;
+        color: var(--muted);
+        margin: 0;
+      }
+      .contact {
+        background: var(--deep);
+        color: #fbfaf4;
+      }
+      .contact .heading {
+        font-size: clamp(42px, 6.3vw, 82px);
+      }
+      .contact p {
+        color: #c5d7d0;
+        max-width: 500px;
+      }
+      .contact .button {
+        background: #fbfaf4;
+        color: var(--deep);
+      }
+      .contact-note {
+        border-left: 1px solid #5f9384;
+        padding-left: 28px;
+        color: #b9d4cb;
+        font-size: 14px;
+      }
+      .footer {
+        padding: 36px 0;
+      }
+      .footer .shell {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .footer nav {
+        display: flex;
+        gap: 15px;
+      }
+      @media (max-width: 760px) {
+        .shell {
+          width: calc(100% - 36px);
+        }
+        .links,
+        .nav .button {
+          display: none;
+        }
+        .menu {
+          display: block;
+        }
+        .hero-grid,
+        .about-grid,
+        .contact-grid,
+        .top,
+        .cases {
+          grid-template-columns: 1fr;
+        }
+        .stamp {
+          border-left: 0;
+          border-top: 1px solid var(--line);
+          padding: 26px 0 0;
+        }
+        .trust .shell {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+        .tree-item,
+        .solution {
+          grid-template-columns: 58px 1fr;
+        }
+        .tree-item p,
+        .solution p {
+          grid-column: 2;
+        }
+        .journey,
+        .blog {
+          grid-template-columns: 1fr;
+        }
+        .step,
+        .step + .step,
+        .article,
+        .article + .article {
+          border-left: 0;
+          border-bottom: 1px solid var(--line);
+          padding: 25px 0;
+        }
+        .case:first-child {
+          grid-row: auto;
+          min-height: 370px;
+        }
+        .footer .shell {
+          flex-direction: column;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          scroll-behavior: auto !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="shell nav">
+        <a href="#top" class="logo"
+          >HSIEN CHUNG<small>TMR · TAIWAN MARKETING RESEARCH</small></a
+        >
+        <nav class="links">
+          <a href="#about">關於我</a><a href="#solutions">AI 解決方案</a
+          ><a href="#cases">案例展示</a><a href="#insights">技術部落格</a>
+        </nav>
+        <a class="button" href="#contact">預約策略諮詢</a
+        ><button
+          class="menu"
+          onclick="document.querySelector('.links').classList.toggle('open')"
+        >
+          ☰
+        </button>
+      </div>
+    </header>
+    <main id="top">
+      <section class="hero">
+        <div class="shell hero-grid">
+          <div>
+            <p class="eyebrow">AI STRATEGY · DATA SCIENCE · MARKETING</p>
+            <h1>讓 <em>AIAIAI</em> 與資料，成為企業成長的日常能力。</h1>
+            <p class="lead">
+              我是鍾皓軒，TMR
+              臺灣行銷研究有限公司創辦人。我協助企業與專業團隊，把有用的資料、可行的
+              AI 工具，轉化為可執行的營運、行銷與決策方案。
+            </p>
+            <div class="actions">
+              <a class="button" href="#contact">開始一場策略對話</a
+              ><a class="textlink" href="#solutions">探索服務內容 ↓</a>
+            </div>
+          </div>
+          <aside class="stamp">
+            <img
+              class="portrait"
+              src="pexels-shvets-production-8933528.jpg"
+              alt="鍾皓軒的專業工作形象"
+            />
+            <strong>08+</strong>
+            <p>年資料科學與產業教學經驗<br />從技術理解，到商業落地</p>
+          </aside>
+        </div>
+      </section>
+      <div class="trust">
+        <div class="shell">
+          <p>跨領域服務經驗</p>
+          <div class="industry">
+            <span>金融</span><span>製造</span><span>醫療</span><span>化工</span
+            ><span>教育</span><span>網路廣告</span><span>出版</span>
+          </div>
+        </div>
+      </div>
+      <section id="about" class="dark">
+        <div class="shell about-grid">
+          <div>
+            <p class="eyebrow">01 · WHO I AM</p>
+            <h2 class="heading">技術要被理解，<br />更要被真正用起來。</h2>
+            <div class="facts">
+              <div class="fact"><b>8+</b><span>資料科學與教學經驗</span></div>
+              <div class="fact"><b>50+</b><span>企業與課程合作</span></div>
+              <div class="fact"><b>0→1</b><span>從導入到組織賦能</span></div>
+            </div>
+          </div>
+          <div class="copy">
+            <p>
+              我專注於
+              AI、資料科學與行銷策略應用，是企業顧問，也是課程講師。長期協助企業、學術單位與專業人士理解數據、導入
+              AI，並將分析結果轉化為可執行的成長方案。
+            </p>
+            <p>
+              曾於中華電信、長榮航空、資策會、工研院、證基會與多家金融企業擔任資料科學講師，也於台科大、北市大等學術場域教授行銷資料科學、AI
+              與市場分析。
+            </p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="shell">
+          <div class="top">
+            <div>
+              <p class="eyebrow">02 · THE CHALLENGE</p>
+              <h2 class="heading">從「有工具」，走到「有效益」。</h2>
+            </div>
+            <p>
+              資料分散、流程繁雜、決策仰賴經驗，或團隊不知道如何讓 AI
+              進入日常工作，都是導入停滯的原因。我協助客戶以明確方法，跨過這段落差。
+            </p>
+          </div>
+          <div class="tree">
+            <article class="tree-item">
+              <span class="number">A / 資料</span>
+              <h3>有資料，卻無法支持決策</h3>
+              <p>建立資料分析架構與預測模型，讓市場、客戶與營運訊號被看見。</p>
+            </article>
+            <article class="tree-item">
+              <span class="number">B / 工具</span>
+              <h3>有 AI，卻不知道如何落地</h3>
+              <p>
+                找到最適合的應用場景，將 Chatbot、知識庫與自動化導入既有流程。
+              </p>
+            </article>
+            <article class="tree-item">
+              <span class="number">C / 團隊</span>
+              <h3>有需求，卻缺少實戰能力</h3>
+              <p>以企業聽得懂、團隊學得會的訓練與陪跑，建立可持續的能力。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="solutions" class="sand">
+        <div class="shell">
+          <div class="top">
+            <div>
+              <p class="eyebrow">03 · AI SOLUTIONS</p>
+              <h2 class="heading">讓技術成為流程的一部分。</h2>
+            </div>
+            <p>
+              從策略規劃、技術建置到組織賦能，依企業現況組合最需要的解決方案，不做只好看的展示。
+            </p>
+          </div>
+          <div class="solution-list">
+            <article class="solution">
+              <span class="number">01 / AI 導入</span>
+              <h3>企業 AI 教育訓練</h3>
+              <p>
+                建立 AI
+                工具使用能力與實戰思維，讓團隊能判斷、運用並持續改善工作方法。
+              </p>
+            </article>
+            <article class="solution">
+              <span class="number">02 / 對話介面</span>
+              <h3>客製化 Chatbot</h3>
+              <p>
+                應用於客服、銷售、內部知識查詢與流程引導，依據真實情境設計對話與資料串接。
+              </p>
+            </article>
+            <article class="solution">
+              <span class="number">03 / 自動化</span>
+              <h3>工作流程自動化 RPA</h3>
+              <p>
+                整合重複性行政、報表與資料處理任務，讓人力回到更高價值的判斷與創造。
+              </p>
+            </article>
+            <article class="solution">
+              <span class="number">04 / 數據</span>
+              <h3>分析架構與預測模型</h3>
+              <p>
+                將分散資訊整理為可追蹤的指標與模型，讓決策具備前瞻性與可驗證的依據。
+              </p>
+            </article>
+            <article class="solution">
+              <span class="number">05 / 策略</span>
+              <h3>私有知識庫與 AI 團隊建置</h3>
+              <p>
+                把內部文件、經驗與流程轉化為智慧資產，同時規劃人才分工、導入流程與應用場景。
+              </p>
+            </article>
+            <article class="solution">
+              <span class="number">06 / 成長</span>
+              <h3>行銷自動化漏斗</h3>
+              <p>
+                串接內容、名單、銷售與數據追蹤，讓 AI 成為商業成長的持續推進器。
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="shell">
+          <div class="top">
+            <div>
+              <p class="eyebrow">04 · HOW WE WORK</p>
+              <h2 class="heading">
+                導入不是一次專案，<br />而是一條可走的路徑。
+              </h2>
+            </div>
+          </div>
+          <div class="journey">
+            <article class="step">
+              <span>01</span>
+              <h3>盤點現況</h3>
+              <p>釐清資料、流程、痛點與優先場景。</p>
+            </article>
+            <article class="step">
+              <span>02</span>
+              <h3>設計方法</h3>
+              <p>選擇能最快創造價值的工具與方案。</p>
+            </article>
+            <article class="step">
+              <span>03</span>
+              <h3>共同實作</h3>
+              <p>透過專案、原型與培訓，讓團隊參與其中。</p>
+            </article>
+            <article class="step">
+              <span>04</span>
+              <h3>持續優化</h3>
+              <p>用衡量指標回看效益，將能力留在組織內。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="cases">
+        <div class="shell">
+          <div class="top">
+            <div>
+              <p class="eyebrow">05 · SELECTED WORK</p>
+              <h2 class="heading">
+                案例不只展示成果，<br />更展示可複製的方法。
+              </h2>
+            </div>
+            <p>
+              以下為可延伸的合作方向。實際專案將依組織資料成熟度、流程與目標，規劃專屬路徑。
+            </p>
+          </div>
+          <div class="cases">
+            <article class="case">
+              <span>企業培訓</span>
+              <div>
+                <h3>從「會用工具」到「能解決問題」的 AI 實戰課程</h3>
+                <p>
+                  以企業真實資料與工作情境設計，建立團隊共通語言與可立即應用的工作方法。
+                </p>
+              </div>
+            </article>
+            <article class="case">
+              <span>智慧客服</span>
+              <div>
+                <h3>內部知識庫 × Chatbot</h3>
+                <p>把分散文件化為可被安全查找與運用的組織資產。</p>
+              </div>
+            </article>
+            <article class="case">
+              <span>數據決策</span>
+              <div>
+                <h3>行銷與客戶洞察模型</h3>
+                <p>連結資料、分眾與行動，提高資源投入品質。</p>
+              </div>
+            </article>
+            <article class="case">
+              <span>流程升級</span>
+              <div>
+                <h3>行政與報表自動化</h3>
+                <p>釋放重複工時，讓決策更快速一致。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="insights" class="sand">
+        <div class="shell">
+          <div class="top">
+            <div>
+              <p class="eyebrow">06 · INSIGHTS</p>
+              <h2 class="heading">把複雜的技術，說成能做的事。</h2>
+            </div>
+            <p>技術部落格將分享企業 AI 導入、資料分析與行銷策略的實務觀點。</p>
+          </div>
+          <div class="blog">
+            <article class="article">
+              <time>AI STRATEGY</time>
+              <h3>企業導入 AI 前，應先釐清的三個問題</h3>
+              <p>不是先找工具，而是先理解流程裡真正需要被改善的決策與工作。</p>
+            </article>
+            <article class="article">
+              <time>DATA PRACTICE</time>
+              <h3>如何讓資料分析不止是一份漂亮報表</h3>
+              <p>從指標、假設到行動，建立能驅動商業決策的分析架構。</p>
+            </article>
+            <article class="article">
+              <time>MARKETING SYSTEM</time>
+              <h3>AI 如何重塑內容到轉換的行銷漏斗</h3>
+              <p>在自動化之外，重新思考人、內容與資料如何協作。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="contact">
+        <div class="shell contact-grid">
+          <div>
+            <p class="eyebrow">07 · START A CONVERSATION</p>
+            <h2 class="heading">讓下一個 AI 專案，從一個清楚的問題開始。</h2>
+            <p>
+              無論你正準備導入
+              AI、提升資料決策能力，或規劃團隊訓練，我們可以先從一次策略對話，找到最值得先做的事。
+            </p>
+            <a
+              class="button"
+              href="mailto:hello@tmr.com.tw?subject=AI%20策略諮詢"
+              >預約策略諮詢</a
+            >
+          </div>
+          <aside class="contact-note">
+            TMR 臺灣行銷研究有限公司<br />鍾皓軒｜創辦人<br /><br />請透過 Email
+            與我聯繫，說明你的產業、目前挑戰與期待目標。
+          </aside>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="shell">
+        <span>© 2026 Hsien Chung / TMR Taiwan Marketing Research</span>
+        <nav>
+          <a href="#about">關於我</a><a href="#solutions">服務</a
+          ><a href="#contact">聯絡我</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
