@@ -470,6 +470,60 @@
         color: #b9d4cb;
         font-size: 14px;
       }
+      .booking-form {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 32px;
+      }
+      .booking-form label {
+        display: grid;
+        gap: 7px;
+        color: #c5d7d0;
+        font: 700 11px Manrope;
+        letter-spacing: 0.08em;
+      }
+      .booking-form .wide {
+        grid-column: 1 / -1;
+      }
+      .booking-form input,
+      .booking-form select,
+      .booking-form textarea {
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid #5f9384;
+        border-radius: 4px;
+        padding: 13px 14px;
+        color: #fbfaf4;
+        background: rgba(251, 250, 244, 0.08);
+        font: 400 14px Manrope, sans-serif;
+      }
+      .booking-form select option {
+        color: var(--ink);
+      }
+      .booking-form input::placeholder,
+      .booking-form textarea::placeholder {
+        color: #aac4ba;
+      }
+      .booking-form textarea {
+        min-height: 112px;
+        resize: vertical;
+      }
+      .booking-form button {
+        justify-self: start;
+        border: 0;
+        cursor: pointer;
+      }
+      .form-status {
+        grid-column: 1 / -1;
+        min-height: 20px;
+        margin: 0;
+        color: #c5d7d0;
+        font-size: 13px;
+      }
+      .form-status.error {
+        color: #ffd0c1;
+      }
       .footer {
         padding: 36px 0;
       }
@@ -530,7 +584,8 @@
           grid-column: 2;
         }
         .journey,
-        .blog {
+        .blog,
+        .booking-form {
           grid-template-columns: 1fr;
         }
         .step,
@@ -859,11 +914,47 @@
               無論你正準備導入
               AI、提升資料決策能力，或規劃團隊訓練，我們可以先從一次策略對話，找到最值得先做的事。
             </p>
-            <a
-              class="button"
-              href="mailto:hello@tmr.com.tw?subject=AI%20策略諮詢"
-              >預約策略諮詢</a
-            >
+            <form id="booking-form" class="booking-form">
+              <label>
+                姓名 *
+                <input name="full_name" type="text" autocomplete="name" required minlength="2" maxlength="100" placeholder="請輸入您的姓名" />
+              </label>
+              <label>
+                電子信箱 *
+                <input name="email" type="email" autocomplete="email" required placeholder="name@company.com" />
+              </label>
+              <label>
+                聯絡電話
+                <input name="phone" type="tel" autocomplete="tel" maxlength="30" placeholder="選填" />
+              </label>
+              <label>
+                公司／單位
+                <input name="company" type="text" autocomplete="organization" maxlength="150" placeholder="選填" />
+              </label>
+              <label>
+                想諮詢的服務
+                <select name="service_interest">
+                  <option value="">請選擇</option>
+                  <option>企業 AI 教育訓練</option>
+                  <option>客製化 Chatbot</option>
+                  <option>工作流程自動化 RPA</option>
+                  <option>分析架構與預測模型</option>
+                  <option>私有知識庫與 AI 團隊建置</option>
+                  <option>行銷自動化漏斗</option>
+                  <option>其他</option>
+                </select>
+              </label>
+              <label>
+                希望聯繫日期
+                <input name="preferred_date" type="date" />
+              </label>
+              <label class="wide">
+                目前挑戰與期待目標 *
+                <textarea name="message" required minlength="10" maxlength="3000" placeholder="請簡述你的產業、目前挑戰，以及希望達成的目標。"></textarea>
+              </label>
+              <button class="button wide" type="submit">送出預約需求</button>
+              <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+            </form>
           </div>
           <aside class="contact-note">
             TMR 臺灣行銷研究有限公司<br />鍾皓軒｜創辦人<br /><br />請透過 Email
@@ -881,5 +972,53 @@
         </nav>
       </div>
     </footer>
+    <script>
+      const bookingForm = document.getElementById("booking-form");
+      const bookingStatus = document.getElementById("form-status");
+      const bookingEndpoint = "https://jglxgtumcbtquwuuqqep.supabase.co/rest/v1/consultation_bookings";
+      const supabasePublishableKey = "sb_publishable_ZpTZ6M-LvICqtfnRMkn6lA_mlL38cXw";
+
+      bookingForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const submitButton = bookingForm.querySelector('button[type="submit"]');
+        const formData = new FormData(bookingForm);
+        const valueOrNull = (name) => formData.get(name).trim() || null;
+        const payload = {
+          full_name: valueOrNull("full_name"),
+          email: valueOrNull("email"),
+          phone: valueOrNull("phone"),
+          company: valueOrNull("company"),
+          service_interest: valueOrNull("service_interest"),
+          preferred_date: valueOrNull("preferred_date"),
+          message: valueOrNull("message"),
+        };
+
+        submitButton.disabled = true;
+        bookingStatus.className = "form-status";
+        bookingStatus.textContent = "正在送出…";
+
+        try {
+          const response = await fetch(bookingEndpoint, {
+            method: "POST",
+            headers: {
+              apikey: supabasePublishableKey,
+              Authorization: `Bearer ${supabasePublishableKey}`,
+              "Content-Type": "application/json",
+              Prefer: "return=minimal",
+            },
+            body: JSON.stringify(payload),
+          });
+
+          if (!response.ok) throw new Error("提交失敗");
+          bookingForm.reset();
+          bookingStatus.textContent = "已收到你的預約需求，我會盡快與你聯繫。";
+        } catch (error) {
+          bookingStatus.className = "form-status error";
+          bookingStatus.textContent = "目前無法送出，請稍後再試或直接透過 Email 聯繫。";
+        } finally {
+          submitButton.disabled = false;
+        }
+      });
+    </script>
   </body>
 </html>
