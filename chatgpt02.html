@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="鍾皓軒｜TMR 臺灣行銷研究有限公司創辦人。AI、資料科學、行銷策略顧問與企業講師。" />
+  <title>鍾皓軒｜AI × 資料科學 × 行銷策略</title>
+  <style>
+    :root{
+      --bg:#07111f;
+      --bg-2:#0b1728;
+      --panel:#0f2036;
+      --panel-2:#132944;
+      --line:rgba(255,255,255,.10);
+      --text:#f6f8fb;
+      --muted:#aab7c8;
+      --cyan:#4de3ff;
+      --blue:#5d7cff;
+      --violet:#9d72ff;
+      --green:#5cf2c2;
+      --shadow:0 18px 50px rgba(0,0,0,.28);
+      --radius:22px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(93,124,255,.17), transparent 28%),
+        radial-gradient(circle at 88% 8%, rgba(77,227,255,.13), transparent 23%),
+        linear-gradient(180deg, var(--bg) 0%, #081522 45%, #09111c 100%);
+      color:var(--text);
+      line-height:1.7;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%}
+    .container{width:min(1180px, calc(100% - 40px)); margin:auto}
+
+    .nav{
+      position:sticky; top:0; z-index:99;
+      backdrop-filter: blur(14px);
+      background:rgba(7,17,31,.76);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{
+      height:72px; display:flex; align-items:center; justify-content:space-between; gap:24px;
+    }
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.4px}
+    .brand-badge{
+      width:38px;height:38px;border-radius:12px;
+      display:grid;place-items:center;font-weight:900;
+      background:linear-gradient(135deg,var(--cyan),var(--blue));
+      color:#06111f;box-shadow:0 8px 25px rgba(77,227,255,.22)
+    }
+    .nav-links{display:flex;align-items:center;gap:24px;color:#cfdae7;font-size:14px}
+    .nav-links a:hover{color:#fff}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      padding:12px 18px;border-radius:14px;font-weight:700;
+      border:1px solid var(--line);transition:.25s ease;cursor:pointer
+    }
+    .btn-primary{
+      background:linear-gradient(135deg,var(--cyan),var(--blue));
+      color:#06111f;border:0;
+      box-shadow:0 12px 28px rgba(93,124,255,.25)
+    }
+    .btn-primary:hover{transform:translateY(-2px);filter:brightness(1.05)}
+    .btn-ghost:hover{background:rgba(255,255,255,.06)}
+
+    .hero{
+      min-height:86vh; display:grid; align-items:center; padding:86px 0 70px;
+      position:relative; overflow:hidden;
+    }
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
+    .eyebrow{
+      display:inline-flex;gap:8px;align-items:center;
+      padding:8px 12px;border:1px solid rgba(77,227,255,.25);
+      background:rgba(77,227,255,.07);border-radius:999px;
+      color:#bdf7ff;font-size:13px;font-weight:700;letter-spacing:.5px
+    }
+    h1{font-size:clamp(44px,7vw,82px);line-height:1.02;margin:22px 0 20px;letter-spacing:-2px}
+    .gradient-text{
+      background:linear-gradient(90deg,#fff 5%,var(--cyan) 48%,#9cb0ff 92%);
+      -webkit-background-clip:text;background-clip:text;color:transparent
+    }
+    .hero p{font-size:19px;color:#bec9d8;max-width:760px;margin:0 0 26px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+    .hero-meta{display:flex;gap:26px;flex-wrap:wrap;margin-top:34px;color:#93a6bb;font-size:14px}
+    .hero-meta strong{display:block;color:#fff;font-size:22px;margin-bottom:2px}
+
+    .visual{
+      position:relative;min-height:500px;display:grid;place-items:center
+    }
+    .orb{
+      width:320px;height:320px;border-radius:50%;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,.9) 0 4%, transparent 5%),
+        radial-gradient(circle at 42% 35%, rgba(77,227,255,.65), transparent 33%),
+        radial-gradient(circle at 70% 68%, rgba(157,114,255,.55), transparent 35%),
+        linear-gradient(135deg,#16335a,#0c1e33);
+      box-shadow:0 0 0 1px rgba(255,255,255,.08), 0 40px 100px rgba(29,64,118,.5);
+      position:relative; overflow:hidden
+    }
+    .orb:before,.orb:after{
+      content:"";position:absolute;border:1px solid rgba(255,255,255,.18);border-radius:50%
+    }
+    .orb:before{inset:28px}
+    .orb:after{inset:64px}
+    .float-card{
+      position:absolute;background:rgba(15,32,54,.86);
+      border:1px solid var(--line);backdrop-filter:blur(12px);
+      padding:16px 18px;border-radius:18px;box-shadow:var(--shadow);min-width:190px
+    }
+    .float-card b{display:block;margin-bottom:4px}
+    .float-card span{font-size:13px;color:#9fb0c4}
+    .fc1{left:0;top:68px}
+    .fc2{right:0;top:180px}
+    .fc3{left:40px;bottom:42px}
+
+    section{padding:90px 0}
+    .section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:34px}
+    .section-head h2{font-size:clamp(32px,4vw,50px);margin:0;letter-spacing:-1px}
+    .section-head p{margin:0;max-width:620px;color:var(--muted)}
+
+    .problem-grid,.service-grid,.case-grid,.blog-grid{display:grid;gap:18px}
+    .problem-grid{grid-template-columns:repeat(3,1fr)}
+    .service-grid{grid-template-columns:repeat(3,1fr)}
+    .case-grid{grid-template-columns:repeat(3,1fr)}
+    .blog-grid{grid-template-columns:repeat(3,1fr)}
+
+    .card{
+      background:linear-gradient(180deg,rgba(19,41,68,.85),rgba(11,24,40,.9));
+      border:1px solid var(--line);border-radius:var(--radius);
+      padding:26px;box-shadow:var(--shadow);transition:.25s ease
+    }
+    .card:hover{transform:translateY(-5px);border-color:rgba(77,227,255,.24)}
+    .icon{
+      width:46px;height:46px;border-radius:14px;display:grid;place-items:center;
+      margin-bottom:18px;font-size:22px;
+      background:linear-gradient(135deg,rgba(77,227,255,.18),rgba(93,124,255,.18));
+      border:1px solid rgba(77,227,255,.16)
+    }
+    .card h3{margin:0 0 10px;font-size:20px}
+    .card p{margin:0;color:var(--muted);font-size:15px}
+
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:stretch}
+    .about-photo{
+      min-height:500px;border-radius:28px;position:relative;overflow:hidden;border:1px solid var(--line);
+      background:
+        linear-gradient(180deg,transparent 0 60%,rgba(0,0,0,.7) 100%),
+        radial-gradient(circle at 50% 32%, rgba(77,227,255,.22), transparent 25%),
+        linear-gradient(135deg,#172d48,#0b1727);
+      display:flex;align-items:flex-end;padding:30px
+    }
+    .portrait-placeholder{
+      position:absolute;inset:50px 50px 0;border-radius:160px 160px 0 0;
+      background:
+        radial-gradient(circle at 50% 30%, rgba(255,255,255,.18) 0 7%, transparent 8%),
+        radial-gradient(circle at 50% 35%, #d4dbeb 0 15%, transparent 16%),
+        radial-gradient(circle at 50% 60%, #273b59 0 28%, transparent 29%);
+      opacity:.9
+    }
+    .about-caption{position:relative;z-index:2}
+    .about-caption small{color:#a9bad0}
+    .about-caption strong{display:block;font-size:26px;margin-top:4px}
+    .about-copy{display:flex;flex-direction:column;justify-content:center}
+    .about-copy h2{font-size:44px;line-height:1.15;margin:0 0 20px}
+    .about-copy p{color:#b8c4d3}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+    .chip{padding:9px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.04);font-size:13px;color:#cbd6e2}
+
+    .service-card{min-height:270px;display:flex;flex-direction:column}
+    .service-card .num{font-size:13px;color:#72e9ff;font-weight:800;letter-spacing:1px}
+    .service-card h3{font-size:22px;margin:12px 0}
+    .service-card ul{margin:0;padding-left:18px;color:#aebdce;font-size:14px}
+    .service-card li{margin:5px 0}
+
+    .case{
+      overflow:hidden;padding:0
+    }
+    .case-cover{height:190px;background:
+      radial-gradient(circle at 30% 30%,rgba(77,227,255,.38),transparent 28%),
+      linear-gradient(135deg,#17365c,#281a4a)}
+    .case:nth-child(2) .case-cover{background:
+      radial-gradient(circle at 75% 20%,rgba(92,242,194,.34),transparent 28%),
+      linear-gradient(135deg,#173b35,#0c2535)}
+    .case:nth-child(3) .case-cover{background:
+      radial-gradient(circle at 70% 30%,rgba(157,114,255,.34),transparent 28%),
+      linear-gradient(135deg,#261d50,#10223c)}
+    .case-body{padding:24px}
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--line);font-size:12px;color:#bdd0e2;margin-bottom:12px}
+
+    .logos{
+      display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:24px
+    }
+    .logo-item{
+      min-height:76px;display:grid;place-items:center;text-align:center;
+      border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.025);
+      color:#cbd7e4;font-size:14px;font-weight:700
+    }
+
+    .blog-card .meta{font-size:12px;color:#7feaff;margin-bottom:10px}
+    .blog-card h3{font-size:20px;margin:0 0 10px}
+    .blog-card a{display:inline-block;margin-top:18px;color:#cbefff;font-size:14px}
+
+    .contact-box{
+      padding:42px;border-radius:30px;border:1px solid var(--line);
+      background:
+        radial-gradient(circle at 80% 20%,rgba(93,124,255,.18),transparent 30%),
+        linear-gradient(135deg,rgba(15,32,54,.95),rgba(11,24,40,.95));
+      display:grid;grid-template-columns:.9fr 1.1fr;gap:36px
+    }
+    .contact-box h2{font-size:44px;line-height:1.1;margin:0 0 14px}
+    .contact-box p{color:#aebfd2}
+    form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    input,select,textarea{
+      width:100%;padding:14px 15px;border-radius:14px;border:1px solid var(--line);
+      background:#0a1728;color:#fff;outline:none
+    }
+    textarea{grid-column:1/-1;min-height:130px;resize:vertical}
+    form .btn{grid-column:1/-1}
+    .full{grid-column:1/-1}
+
+    footer{padding:32px 0 42px;border-top:1px solid var(--line);color:#8fa0b3;font-size:13px}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+    .mobile-toggle{display:none;background:none;border:0;color:#fff;font-size:24px}
+    @media (max-width: 920px){
+      .nav-links{display:none}
+      .mobile-toggle{display:block}
+      .hero-grid,.about-grid,.contact-box{grid-template-columns:1fr}
+      .visual{min-height:430px}
+      .problem-grid,.service-grid,.case-grid,.blog-grid{grid-template-columns:1fr 1fr}
+      .logos{grid-template-columns:repeat(3,1fr)}
+    }
+    @media (max-width: 640px){
+      .container{width:min(100% - 28px,1180px)}
+      .hero{padding-top:60px}
+      h1{font-size:46px}
+      .problem-grid,.service-grid,.case-grid,.blog-grid{grid-template-columns:1fr}
+      .section-head{display:block}
+      .section-head p{margin-top:12px}
+      .logos{grid-template-columns:1fr 1fr}
+      .float-card{min-width:160px;padding:13px}
+      .fc1{left:0}.fc2{right:0}.fc3{left:10px}
+      .orb{width:270px;height:270px}
+      form{grid-template-columns:1fr}
+      textarea,.full,form .btn{grid-column:auto}
+      .contact-box{padding:26px}
+      .about-photo{min-height:420px}
+      .portrait-placeholder{inset:40px 25px 0}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="brand">
+        <span class="brand-badge">TMR</span>
+        <span>鍾皓軒</span>
+      </a>
+      <div class="nav-links">
+        <a href="#about">關於我</a>
+        <a href="#services">AI 解決方案</a>
+        <a href="#cases">案例</a>
+        <a href="#insights">Insights</a>
+        <a href="#contact">聯絡我</a>
+        <a class="btn btn-primary" href="#contact">預約顧問諮詢</a>
+      </div>
+      <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">AI × DATA SCIENCE × MARKETING STRATEGY</span>
+        <h1><span class="gradient-text">把 AI 與數據</span><br>轉化為可落地的商業成果</h1>
+        <p>
+          我是鍾皓軒，臺灣行銷研究有限公司 TMR 創辦人，專注於 AI、資料科學與行銷策略應用。
+          協助企業從工具導入、人才培訓到流程落地，建立真正可持續的 AI 與資料競爭力。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">預約顧問諮詢 →</a>
+          <a class="btn btn-ghost" href="#services">查看 AI 解決方案</a>
+        </div>
+        <div class="hero-meta">
+          <div><strong>8+</strong>年資料科學與產業教學經驗</div>
+          <div><strong>跨產業</strong>企業顧問與教育訓練</div>
+          <div><strong>AI × Data</strong>技術與商業整合</div>
+        </div>
+      </div>
+
+      <div class="visual" aria-hidden="true">
+        <div class="orb"></div>
+        <div class="float-card fc1"><b>AI Transformation</b><span>企業 AI 導入與策略規劃</span></div>
+        <div class="float-card fc2"><b>LLM / RAG / Agent</b><span>Chatbot、知識庫與智慧流程</span></div>
+        <div class="float-card fc3"><b>Data → Decision</b><span>數據分析、預測與商業決策</span></div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">BUSINESS CHALLENGES</span>
+          <h2>企業不是缺 AI，<br>而是缺少能落地的方法。</h2>
+        </div>
+        <p>我們協助企業解決「有資料卻不會用、有工具卻無法落地、有 AI 卻不知道如何創造效益」的問題。</p>
+      </div>
+
+      <div class="problem-grid">
+        <article class="card"><div class="icon">📊</div><h3>有資料，卻不會用</h3><p>資料分散、缺乏分析架構，無法轉化成可執行的商業決策。</p></article>
+        <article class="card"><div class="icon">🤖</div><h3>有 AI，卻無法落地</h3><p>工具導入後沒有流程、制度與使用情境，最後只停留在展示階段。</p></article>
+        <article class="card"><div class="icon">⚙️</div><h3>重複工作過多</h3><p>行政、報表與資料處理佔用大量人力，需要自動化與流程再設計。</p></article>
+        <article class="card"><div class="icon">📈</div><h3>決策依賴經驗</h3><p>缺乏預測模型與量化依據，管理決策難以規模化複製。</p></article>
+        <article class="card"><div class="icon">🎯</div><h3>行銷成效難衡量</h3><p>內容、名單、轉換與數據沒有串接，ROI 難以追蹤與優化。</p></article>
+        <article class="card"><div class="icon">🧠</div><h3>團隊缺乏 AI 能力</h3><p>需要企業內訓與實戰導入，讓團隊真正學會並能獨立應用。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container about-grid">
+      <div class="about-photo">
+        <div class="portrait-placeholder"></div>
+        <div class="about-caption">
+          <small>TMR Founder / AI Consultant / Lecturer</small>
+          <strong>鍾皓軒</strong>
+        </div>
+      </div>
+      <div class="about-copy">
+        <span class="eyebrow">ABOUT</span>
+        <h2>技術不是目的，<br>商業成果才是。</h2>
+        <p>
+          我擁有 8 年資料科學與產業教學經驗，長期協助企業、學術單位與專業人士理解數據、導入 AI，
+          並將分析結果轉化為可執行的商業策略與成長方案。
+        </p>
+        <p>
+          曾擔任中華電信、長榮航空、資策會、工研院、證基會與金融企業等單位的資料科學課程講師，
+          也於台科大、北市大等學術場域教授行銷資料科學、AI 與市場分析相關課程。
+        </p>
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">LLM / Generative AI</span><span class="chip">Prompt Engineering</span>
+          <span class="chip">Data Science</span><span class="chip">Machine Learning</span><span class="chip">GCP</span>
+          <span class="chip">RPA</span><span class="chip">Marketing Analytics</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">AI SOLUTIONS</span>
+          <h2>從策略、培訓到系統落地</h2>
+        </div>
+        <p>以企業成長與組織賦能為核心，協助 AI 從概念進入營運流程，提升效率、降低成本並創造可持續的競爭優勢。</p>
+      </div>
+
+      <div class="service-grid">
+        <article class="card service-card"><span class="num">01 / STRATEGY</span><h3>AI 企業轉型顧問</h3><ul><li>AI 現況盤點</li><li>應用場景分析</li><li>導入 Roadmap</li><li>ROI / 效益評估</li><li>AI 團隊 0 → 1 建置</li></ul></article>
+        <article class="card service-card"><span class="num">02 / TRAINING</span><h3>企業 AI 教育訓練</h3><ul><li>生成式 AI</li><li>ChatGPT / LLM</li><li>Prompt Engineering</li><li>AI 辦公與行銷</li><li>Python / 資料分析</li></ul></article>
+        <article class="card service-card"><span class="num">03 / CHATBOT</span><h3>AI Chatbot 客製開發</h3><ul><li>AI 客服</li><li>AI 銷售助手</li><li>企業內部問答</li><li>RAG / LLM 應用</li><li>流程引導機器人</li></ul></article>
+        <article class="card service-card"><span class="num">04 / KNOWLEDGE</span><h3>企業私有知識庫</h3><ul><li>文件整合</li><li>SOP 知識化</li><li>企業經驗保存</li><li>智慧搜尋</li><li>AI Knowledge Assistant</li></ul></article>
+        <article class="card service-card"><span class="num">05 / AUTOMATION</span><h3>AI × RPA 工作流程自動化</h3><ul><li>行政自動化</li><li>報表自動化</li><li>資料處理</li><li>跨系統整合</li><li>AI Agent Workflow</li></ul></article>
+        <article class="card service-card"><span class="num">06 / DATA</span><h3>數據分析與 AI 預測</h3><ul><li>商業數據分析</li><li>顧客分析</li><li>行銷分析</li><li>預測模型</li><li>決策 Dashboard</li></ul></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="cases">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">CASE STUDIES</span>
+          <h2>把技術轉化成看得見的成果</h2>
+        </div>
+        <p>以下以示意案例呈現網站版型，正式上線時可替換為你的真實專案名稱、客戶授權內容與量化成果。</p>
+      </div>
+
+      <div class="case-grid">
+        <article class="card case"><div class="case-cover"></div><div class="case-body"><span class="tag">AI Knowledge Base</span><h3>企業內部知識庫與智慧問答</h3><p>整合 SOP、內部文件與知識，建立可查詢的 AI 助理，降低跨部門資訊搜尋成本。</p></div></article>
+        <article class="card case"><div class="case-cover"></div><div class="case-body"><span class="tag">Marketing Analytics</span><h3>行銷數據整合與成效分析</h3><p>串接名單、內容與成效數據，建立可衡量的行銷決策架構與自動化流程。</p></div></article>
+        <article class="card case"><div class="case-cover"></div><div class="case-body"><span class="tag">AI Training</span><h3>企業生成式 AI 實戰培訓</h3><p>從 Prompt 到工作流程設計，讓團隊把 AI 真正用進日常任務與決策場景。</p></div></article>
+      </div>
+
+      <div class="logos">
+        <div class="logo-item">中華電信</div><div class="logo-item">長榮航空</div><div class="logo-item">資策會</div>
+        <div class="logo-item">工研院</div><div class="logo-item">證基會</div><div class="logo-item">臺灣科技大學</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="insights">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">INSIGHTS</span>
+          <h2>AI、資料科學與商業應用觀點</h2>
+        </div>
+        <p>用內容建立專業信任，讓潛在客戶先看見你的方法論，再進一步產生顧問、培訓與專案合作需求。</p>
+      </div>
+
+      <div class="blog-grid">
+        <article class="card blog-card"><div class="meta">GENERATIVE AI</div><h3>企業導入生成式 AI，真正該先做的是什麼？</h3><p>從工具選型之前，先盤點流程、資料、使用者與 KPI，避免 AI 導入變成一次性展示。</p><a href="#">閱讀文章 →</a></article>
+        <article class="card blog-card"><div class="meta">LLM / RAG</div><h3>企業知識庫為什麼不是把 PDF 丟給 Chatbot 就好？</h3><p>從資料治理、權限、切片、檢索與回答品質談 RAG 系統真正需要的設計思維。</p><a href="#">閱讀文章 →</a></article>
+        <article class="card blog-card"><div class="meta">DATA SCIENCE</div><h3>從數據分析到管理決策：企業常忽略的最後一哩路</h3><p>分析本身不是終點，重點是如何把數據轉成可執行的行動與管理機制。</p><a href="#">閱讀文章 →</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact-box">
+        <div>
+          <span class="eyebrow">CONTACT</span>
+          <h2>讓 AI 真正進入<br>你的工作流程。</h2>
+          <p>適合 AI 顧問、企業內訓、AI 專案、演講邀約、教育合作與其他商務合作需求。</p>
+          <div class="chips">
+            <span class="chip">AI 顧問</span><span class="chip">企業內訓</span><span class="chip">AI 專案</span><span class="chip">演講合作</span>
+          </div>
+        </div>
+
+        <form onsubmit="event.preventDefault(); alert('此為網站示意表單。正式上線時可串接 Email、Google Form、CRM 或自動化流程。');">
+          <input type="text" placeholder="姓名" required>
+          <input type="text" placeholder="公司 / 組織">
+          <input type="email" placeholder="Email" required>
+          <input type="tel" placeholder="電話">
+          <select class="full">
+            <option>選擇合作類型</option>
+            <option>AI 顧問</option>
+            <option>企業內訓</option>
+            <option>AI 專案</option>
+            <option>演講 / 教育合作</option>
+            <option>其他</option>
+          </select>
+          <textarea placeholder="請簡述目前需求、問題與預計導入情境"></textarea>
+          <button class="btn btn-primary" type="submit">送出合作需求</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 鍾皓軒 / 臺灣行銷研究有限公司 TMR</div>
+      <div>AI × Data Science × Marketing Strategy</div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu(){
+      const nav = document.querySelector('.nav-links');
+      if(getComputedStyle(nav).display === 'none'){
+        nav.style.display='flex';
+        nav.style.position='absolute';
+        nav.style.top='72px';
+        nav.style.left='14px';
+        nav.style.right='14px';
+        nav.style.flexDirection='column';
+        nav.style.alignItems='stretch';
+        nav.style.padding='18px';
+        nav.style.border='1px solid rgba(255,255,255,.1)';
+        nav.style.borderRadius='18px';
+        nav.style.background='rgba(7,17,31,.98)';
+      }else{
+        nav.style.display='none';
+      }
+    }
+  </script>
+</body>
+</html>
