@@ -345,6 +345,33 @@
         grid-template-columns: 1.2fr 0.8fr;
         gap: 16px;
       }
+      .case-media {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: minmax(0, 1.45fr) minmax(220px, 0.55fr);
+        gap: 16px;
+        min-height: 430px;
+      }
+      .case-media figure {
+        margin: 0;
+        min-height: 0;
+        overflow: hidden;
+        border-radius: 22px;
+        background: var(--ink);
+      }
+      .case-media img,
+      .case-media video {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .case-media img {
+        object-position: center;
+      }
+      .case-media video {
+        object-position: center;
+      }
       .case {
         min-height: 295px;
         border-radius: 22px;
@@ -472,8 +499,18 @@
         .about-grid,
         .contact-grid,
         .top,
-        .cases {
+        .cases,
+        .case-media {
           grid-template-columns: 1fr;
+        }
+        .case-media {
+          min-height: auto;
+        }
+        .case-media figure:first-child {
+          height: 290px;
+        }
+        .case-media figure:last-child {
+          height: 440px;
         }
         .stamp {
           border-left: 0;
@@ -738,6 +775,20 @@
             </p>
           </div>
           <div class="cases">
+            <div class="case-media" aria-label="餐飲品牌情境素材">
+              <figure>
+                <img
+                  src="pexels-bertellifotografia-12497806.jpg"
+                  alt="戶外情境中兩人舉起紅色飲品"
+                />
+              </figure>
+              <figure>
+                <video autoplay muted loop playsinline preload="metadata">
+                  <source src="8678581-uhd_2160_3840_30fps%20(1).mp4" type="video/mp4" />
+                  您的瀏覽器不支援影片播放。
+                </video>
+              </figure>
+            </div>
             <article class="case">
               <span>企業培訓</span>
               <div>
